@@ -5,7 +5,7 @@ public class menu {
 
     //importações 
     static Scanner escaneador = new Scanner(System.in);
-    static carros veiculo = new carros();
+    
     //
 
 
@@ -112,14 +112,12 @@ public class menu {
     public static void Menu( ){
         System.out.println( "                                MENU PRINCIPAL");
 
-        int opcaoMenu = escaneador.nextInt();
-
-       
-
         System.out.println("\n Escolha alguma das opções abaixo:");
         System.out.println("1. Gerenciar veiculos.");
         System.out.println("2. Gerenciamento de clientes.");
         System.out.println("3. Controle de vendas.");
+
+        int opcaoMenu = escaneador.nextInt();
         
         switch(opcaoMenu){
 
@@ -137,19 +135,22 @@ public class menu {
 
     public static void GerenciaCarros(){
 
-        carros carro1 = new carros();
-        carro1.modelo = "fusca";
+        carros carro1 = new carros("Civic", 2020, "vermelho", 45000, 95000.00);
+        carros carro2 = new carros("Gol", 2015, "azul", 120000, 35000.00);
+        carros carro3 = new carros("Corolla", 2022, "verde", 20000, 130000.00);
+        
+        
+       
 
-        int CarsControler = escaneador.nextInt();
+        
 
-        System.out.println(carro1.modelo);
-
-        System.out.println(" \n Gerenciamento de vendas:");
+        System.out.println(" \n                GERENCIAMENTO DE VEICULOS:");
         System.out.println("1. Cadastro veículo novo.");
         System.out.println("2. Ver veiculos.");
         System.out.println("3. Editar veiculo.");
         System.out.println("4. Exluir cadastro de veiculos.");
         System.out.println("0. Voltar para o menu principal.");
+         int CarsControler = escaneador.nextInt();
 
         switch(CarsControler){
 
@@ -163,6 +164,12 @@ public class menu {
                 System.out.println("\n    Cadastro de veiculos");
                 
 
+            }
+            case 2:
+            {
+                System.out.println("LISTA DE VEICULOS ");
+
+                System.out.printf(carro1.modelo+ "", carro1.ano+ "", carro1.cor+ "", carro1.KM+ "", carro1.preco+ "");
             }
         }
 
