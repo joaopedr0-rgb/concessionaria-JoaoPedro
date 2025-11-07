@@ -1,11 +1,17 @@
 import java.util.Scanner;
-public class Main {
+import packCarros.carros;
+public class menu {
 
-
+    //importações 
     static Scanner escaneador = new Scanner(System.in);
+    static carros veiculo = new carros();
+    //
+
+
     public static void main(String[] args) {
         // Variaveis usadas para guardar informações do usuario
         // Tambem usadas de parametro nas funções login
+        
         String User = null;
         String senha= null;
 
@@ -82,6 +88,17 @@ public class Main {
 
     }
     public static void Menu( ){
-        System.out.println("BOB ESPONJA");
+        System.out.println( "                                MENU PRINCIPAL");
+
+        int opcaoMenu;
+
+          System.out.print("\033[H\033[2J");
+        System.out.flush();
+
+        System.out.println("\n Escolha alguma das opções abaixo:");
+        System.out.println("1. Gerenciar veiculos.");
+        System.out.println("2. Gerenciamento de clientes.");
+        System.out.println("3. Controle de vendas.");
+
     }
 }
