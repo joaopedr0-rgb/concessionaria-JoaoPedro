@@ -19,4 +19,12 @@ public class carros {
         this.KM = KM;
         this.preco = preco;
     }
+    public String toString() {
+    return "Modelo: " + modelo +
+           ", Ano: " + ano +
+           ", Cor: " + cor +
+           ", KM: " + KM +
+           ", Preço: " + preco;
+    }
+    
 }

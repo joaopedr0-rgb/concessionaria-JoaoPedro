@@ -37,12 +37,16 @@ public class menu {
             {
                 //Função será inicializada para efetuar o Login
                 Login(User, senha);
+                Menu();
+                break;
 
 
             }
             case 2:
                 //Função sera inicializada para efetuar o cadastro
                 Cadastro(User, senha);
+                Menu();
+                break;
 
 
         }
@@ -61,7 +65,9 @@ public class menu {
          Logsenha = escaneador.next();
 
         //Apos o login ser efetuado irá para o menu principal
-         Menu();
+         
+         return;
+         
 
 
     }
@@ -94,13 +100,14 @@ public class menu {
             //if usado para verificar se senha esta correta
             if (Verefique.equals(CadSenha)) {
 
-                Menu();
+                
+                
                 break;
             } else {
                 System.out.println("Tente novamente");
             }
 
-
+            
         }
 
 
@@ -124,8 +131,9 @@ public class menu {
             case 1:
             {
                 GerenciaCarros();
+                break;
             }
-
+            
         }
     }
 
@@ -139,7 +147,7 @@ public class menu {
         carros carro2 = new carros("Gol", 2015, "azul", 120000, 35000.00);
         carros carro3 = new carros("Corolla", 2022, "verde", 20000, 130000.00);
         
-        
+        carros[] c = new carros[3];
        
 
         
@@ -150,18 +158,52 @@ public class menu {
         System.out.println("3. Editar veiculo.");
         System.out.println("4. Exluir cadastro de veiculos.");
         System.out.println("0. Voltar para o menu principal.");
-         int CarsControler = escaneador.nextInt();
+        int CarsControler = escaneador.nextInt();
 
         switch(CarsControler){
 
             case 0:
             {
                 Menu();
+                break;
             }
 
             case 1:
             {
                 System.out.println("\n    Cadastro de veiculos");
+
+                for (int i = 0; i < 10; i++)
+                {
+                    
+
+                    System.out.println("Digite o modelo do veiculo" );
+                    String modelo = escaneador.next();
+
+                    System.out.println("Digite o ano do veiculo" );
+                    int ano =escaneador.nextInt();
+
+                    System.out.println("Digite o cor do veiculo" );
+                    String cor = escaneador.next();
+
+                    System.out.println("Digite a kilometragem do veiculo");
+                    int KM = escaneador.nextInt();
+
+                    System.out.println("Digite o preço do veiculo");
+                    double preco = escaneador.nextDouble();
+                    
+                    c[i] = new carros(modelo, ano, cor, KM, preco);
+
+                    
+                    break;
+                }
+                System.out.println("Digite 0 para voltar ao Menu principal");
+                CarsControler = escaneador.nextInt();
+                if(CarsControler == 0){
+                    Menu();
+                }
+                
+                
+                
                 
 
             }
@@ -169,8 +211,25 @@ public class menu {
             {
                 System.out.println("LISTA DE VEICULOS ");
 
-                System.out.printf(carro1.modelo+ "", carro1.ano+ "", carro1.cor+ "", carro1.KM+ "", carro1.preco+ "");
+                System.out.println(carro1.toString());
+                System.out.println();
+                System.out.println(carro2.toString());
+                System.out.println();
+                System.out.println(carro3.toString());
+                System.out.println();
+                System.out.println(c);
+                System.out.println();
+                
+                System.out.println("Digite 0 para voltar ao Menu principal");
+                CarsControler = escaneador.nextInt();
+                if(CarsControler == 0){
+                    Menu();
+                }
+
+
+                break;
             }
+            
         }
 
     }
