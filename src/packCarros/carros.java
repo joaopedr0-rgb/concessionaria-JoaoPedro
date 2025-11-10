@@ -146,10 +146,9 @@ public class Carros {
                 System.out.println();
                 System.out.println(carro3.toString());
                 System.out.println();
-                
                 for (Carros c : ListaCarros) {
-                    System.out.println(c);
-                }
+            System.out.println(c);
+        }
 
                 System.out.println("Digite 0 para voltar ao Menu principal");
                 CarsControler = escanor.nextInt();
