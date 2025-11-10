@@ -1,5 +1,5 @@
+package packCarros;
 import java.util.Scanner;
-import packCarros.carros;
 
 public class menu {
 
@@ -115,8 +115,9 @@ public class menu {
 
 
 
-
+    //Função usada para fazero o "menu"
     public static void Menu( ){
+        //"front" do menu
         System.out.println( "                                MENU PRINCIPAL");
 
         System.out.println("\n Escolha alguma das opções abaixo:");
@@ -124,113 +125,23 @@ public class menu {
         System.out.println("2. Gerenciamento de clientes.");
         System.out.println("3. Controle de vendas.");
 
+        //variavel usada para controle do menu
         int opcaoMenu = escaneador.nextInt();
         
+        //switch usado para dar funcionalidade ao menu
         switch(opcaoMenu){
 
             case 1:
             {
-                GerenciaCarros();
+                //chamando função do sub-menu "geriamendo de carros"
+                Carros.GerenciaCarros();
                 break;
             }
             
         }
     }
 
-
-
-
-
-    public static void GerenciaCarros(){
-
-        carros carro1 = new carros("Civic", 2020, "vermelho", 45000, 95000.00);
-        carros carro2 = new carros("Gol", 2015, "azul", 120000, 35000.00);
-        carros carro3 = new carros("Corolla", 2022, "verde", 20000, 130000.00);
-        
-        carros[] c = new carros[3];
-       
-
-        
-
-        System.out.println(" \n                GERENCIAMENTO DE VEICULOS:");
-        System.out.println("1. Cadastro veículo novo.");
-        System.out.println("2. Ver veiculos.");
-        System.out.println("3. Editar veiculo.");
-        System.out.println("4. Exluir cadastro de veiculos.");
-        System.out.println("0. Voltar para o menu principal.");
-        int CarsControler = escaneador.nextInt();
-
-        switch(CarsControler){
-
-            case 0:
-            {
-                Menu();
-                break;
-            }
-
-            case 1:
-            {
-                System.out.println("\n    Cadastro de veiculos");
-
-                for (int i = 0; i < 10; i++)
-                {
-                    
-
-                    System.out.println("Digite o modelo do veiculo" );
-                    String modelo = escaneador.next();
-
-                    System.out.println("Digite o ano do veiculo" );
-                    int ano =escaneador.nextInt();
-
-                    System.out.println("Digite o cor do veiculo" );
-                    String cor = escaneador.next();
-
-                    System.out.println("Digite a kilometragem do veiculo");
-                    int KM = escaneador.nextInt();
-
-                    System.out.println("Digite o preço do veiculo");
-                    double preco = escaneador.nextDouble();
-                    
-                    c[i] = new carros(modelo, ano, cor, KM, preco);
-
-                    
-                    break;
-                }
-                System.out.println("Digite 0 para voltar ao Menu principal");
-                CarsControler = escaneador.nextInt();
-                if(CarsControler == 0){
-                    Menu();
-                }
-                
-                
-                
-                
-
-            }
-            case 2:
-            {
-                System.out.println("LISTA DE VEICULOS ");
-
-                System.out.println(carro1.toString());
-                System.out.println();
-                System.out.println(carro2.toString());
-                System.out.println();
-                System.out.println(carro3.toString());
-                System.out.println();
-                System.out.println(c);
-                System.out.println();
-                
-                System.out.println("Digite 0 para voltar ao Menu principal");
-                CarsControler = escaneador.nextInt();
-                if(CarsControler == 0){
-                    Menu();
-                }
-
-
-                break;
-            }
-            
-        }
-
-    }
 }
+
+
+   
