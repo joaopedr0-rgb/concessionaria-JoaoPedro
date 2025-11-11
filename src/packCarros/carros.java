@@ -12,7 +12,7 @@ public class Carros {
 
     
     //Criando o OBJETO "carro"
-    public String modelo;
+     public String modelo;
     public int ano;
     public String placa;
     public String cor;
@@ -142,25 +142,28 @@ public class Carros {
             {
 
                 System.out.println("LISTA DE VEICULOS ");
+                 
 
-                System.out.println(carro1.toString());
-                System.out.println();
-                System.out.println(carro2.toString());
-                System.out.println();
-                System.out.println(carro3.toString());
-                System.out.println();
-                for (Carros c : ListaCarros) {
+              
+                    for (Carros c : ListaCarros) {
 
-                    System.out.println(c);
-                    System.out.println();
-                }
+                        
+                        System.out.println(c);
+                        System.out.println();
+                        
+                    }
+                   
+                
 
-                        System.out.println("Digite 0 para voltar ao Menu principal");
-                        CarsControler = escanor.nextInt();
-                        if(CarsControler == 0){
-                            System.out.println();
-                            menu.Menu();
-                }
+                System.out.println("Digite 0 para voltar ao Menu principal");
+                CarsControler = escanor.nextInt();
+
+                if(CarsControler == 0){
+                    
+                System.out.println();
+                GerenciaCarros();
+
+                }  
 
 
                 break;
@@ -180,7 +183,7 @@ public class Carros {
                     System.out.println("Carro 1.");
                     System.out.println("Carro 2.");
                     System.out.println("Carro 3.");
-                    System.out.println("Carro 4.");
+                    
 
                     CarsControler = escanor.nextInt();
 
@@ -189,24 +192,65 @@ public class Carros {
                         case 1:
                         {
                             String modelo_novo = null;
+                            int novo_ano = 0;
+                            String nova_cor = null;
+                            int novo_KM = 0;
+                            double novo_preco = 0;
 
-                            System.out.println("Digite as novas informações do veiculo"  );
+                            
+
+                            System.out.println("\nEscolha uma informação para editar"  );
+                            System.out.println("1. Modelo");
+                            System.out.println("2. Ano");
+                            System.out.println("3. Cor");
+                            System.out.println("4. KM");
+                            System.out.println("5. Preço");
+                            CarsControler = escanor.nextInt();
+
+                            if(CarsControler == 1){
+
                             System.out.println("modelo:"  );
-                            String modelo = escanor.next();
+                            modelo_novo = escanor.next();
+
+                            carro1.modelo = modelo_novo;
+                            
+                            }
+
+                            if (CarsControler == 2){
 
                             System.out.println("Ano:" );
-                            int ano =escanor.nextInt();
+                            novo_ano = escanor.nextInt();
 
+                            carro1.ano = novo_ano;
+                            
+                            ListaCarros.add(carro1);
+                            }
+
+                            if(CarsControler == 3){
                             System.out.println("Cor do veiculo" );
-                            String cor = escanor.next();
+                             nova_cor = escanor.next();
 
+                             carro1.cor = nova_cor;
+
+                            }
+
+                            if(CarsControler == 4){
                             System.out.println("Kilometragem do veiculo");
-                            int KM = escanor.nextInt();
+                            novo_KM = escanor.nextInt();
 
+                            carro1.KM = novo_KM;
+
+                            }
+                            
+                            if(CarsControler == 5){
                             System.out.println("Preço do veiculo");
-                            double preco = escanor.nextDouble();
-                            Carros EditorCarros = new Carros(modelo, ano, cor, KM, preco);
-                            carro1 = EditorCarros;
+                            novo_preco = escanor.nextDouble();
+
+                            carro1.preco = novo_preco;
+
+                            }
+                            
+                            
                             menu.Menu();
 
                             
@@ -215,8 +259,155 @@ public class Carros {
                             
 
                         }
+                        case 2:
+                        {
+                            String modelo_novo = null;
+                            int novo_ano = 0;
+                            String nova_cor = null;
+                            int novo_KM = 0;
+                            double novo_preco = 0;
+
+                            
+
+                            System.out.println("\nEscolha uma informação para editar"  );
+                            System.out.println("1. Modelo");
+                            System.out.println("2. Ano");
+                            System.out.println("3. Cor");
+                            System.out.println("4. KM");
+                            System.out.println("5. Preço");
+                            CarsControler = escanor.nextInt();
+
+                            if(CarsControler == 1){
+
+                            System.out.println("modelo:"  );
+                            modelo_novo = escanor.next();
+
+                            carro2.modelo = modelo_novo;
+                            
+                            }
+
+                            if (CarsControler == 2){
+
+                            System.out.println("Ano:" );
+                            novo_ano = escanor.nextInt();
+
+                            carro2.ano = novo_ano;
+                            
+                            ListaCarros.add(carro1);
+                            }
+
+                            if(CarsControler == 3){
+                            System.out.println("Cor do veiculo" );
+                             nova_cor = escanor.next();
+
+                             carro2.cor = nova_cor;
+
+                            }
+
+                            if(CarsControler == 4){
+                            System.out.println("Kilometragem do veiculo");
+                            novo_KM = escanor.nextInt();
+
+                            carro2.KM = novo_KM;
+
+                            }
+                            
+                            if(CarsControler == 5){
+                            System.out.println("Preço do veiculo");
+                            novo_preco = escanor.nextDouble();
+
+                            carro2.preco = novo_preco;
+
+                            }
+                            
+                            
+                            menu.Menu();
+
+                            
+                            System.out.println("");
+
+
+                        }
+                        case 3:
+                        {
+                            String modelo_novo = null;
+                            int novo_ano = 0;
+                            String nova_cor = null;
+                            int novo_KM = 0;
+                            double novo_preco = 0;
+
+                            
+
+                            System.out.println("\nEscolha uma informação para editar"  );
+                            System.out.println("1. Modelo");
+                            System.out.println("2. Ano");
+                            System.out.println("3. Cor");
+                            System.out.println("4. KM");
+                            System.out.println("5. Preço");
+                            CarsControler = escanor.nextInt();
+
+                            if(CarsControler == 1){
+
+                            System.out.println("modelo:"  );
+                            modelo_novo = escanor.next();
+
+                            carro3.modelo = modelo_novo;
+                            
+                            }
+
+                            if (CarsControler == 2){
+
+                            System.out.println("Ano:" );
+                            novo_ano = escanor.nextInt();
+
+                            carro3.ano = novo_ano;
+                            
+                            ListaCarros.add(carro1);
+                            }
+
+                            if(CarsControler == 3){
+                            System.out.println("Cor do veiculo" );
+                             nova_cor = escanor.next();
+
+                             carro3.cor = nova_cor;
+
+                            }
+
+                            if(CarsControler == 4){
+                            System.out.println("Kilometragem do veiculo");
+                            novo_KM = escanor.nextInt();
+
+                            carro3.KM = novo_KM;
+
+                            }
+                            
+                            if(CarsControler == 5){
+                            System.out.println("Preço do veiculo");
+                            novo_preco = escanor.nextDouble();
+
+                            carro3.preco = novo_preco;
+
+                            }
+                            
+                            System.out.println("Carro editado !!!");
+                            menu.Menu();
+
+                            
+                            
+
+                        }
+                       
+                        default:
+                        {
+                            System.out.println("Escolha uma opção valida");
+                            break;
+                        }
                     }
                 }
+            }
+            default:
+            {
+                System.out.println("Escolha uma opção valida");
             }
             
         }
