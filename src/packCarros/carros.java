@@ -53,6 +53,10 @@ public class Carros {
         Carros carro2 = new Carros("Gol", 2015, "azul", 120000, 35000.00);
         Carros carro3 = new Carros("Corolla", 2022, "verde", 20000, 130000.00);
         
+        ListaCarros.add(carro1);
+        ListaCarros.add(carro2);
+        ListaCarros.add(carro3);
+
 
 
         
@@ -70,8 +74,7 @@ public class Carros {
         System.out.println("4. Exluir cadastro de veiculos.");
         System.out.println("0. Voltar para o menu principal."); 
 
-
-
+       
 
         //variavel usada para controlar o submenu
         int CarsControler = escanor.nextInt();
@@ -94,13 +97,13 @@ public class Carros {
                 System.out.println("\n    Cadastro de veiculos");
 
                 //Criação de um novo objeto "carro"
-                 System.out.println("Digite o modelo do veiculo"  );
+                    System.out.println("Digite o modelo do veiculo"  );
                     String modelo = escanor.next();
 
                     System.out.println("Digite o ano do veiculo" );
                     int ano =escanor.nextInt();
 
-                    System.out.println("Digite o cor do veiculo" );
+                    System.out.println("Digite a cor do veiculo" );
                     String cor = escanor.next();
 
                     System.out.println("Digite a kilometragem do veiculo");
@@ -147,23 +150,76 @@ public class Carros {
                 System.out.println(carro3.toString());
                 System.out.println();
                 for (Carros c : ListaCarros) {
-            System.out.println(c);
-        }
 
-                System.out.println("Digite 0 para voltar ao Menu principal");
-                CarsControler = escanor.nextInt();
-                if(CarsControler == 0){
+                    System.out.println(c);
                     System.out.println();
-                    menu.Menu();
+                }
+
+                        System.out.println("Digite 0 para voltar ao Menu principal");
+                        CarsControler = escanor.nextInt();
+                        if(CarsControler == 0){
+                            System.out.println();
+                            menu.Menu();
                 }
 
 
                 break;
+            }
+            case 3:
+            {
+                System.out.println("\nEditar veiculos");
+                System.out.println("");
+                System.out.println("1. Editar veiculos.");
+                System.out.println("2. Excluir veiculos.");
+                
+                CarsControler = escanor.nextInt();
+
+                if(CarsControler == 1){
+                    System.out.println("Escolha um veiculo para editar:");
+
+                    System.out.println("Carro 1.");
+                    System.out.println("Carro 2.");
+                    System.out.println("Carro 3.");
+                    System.out.println("Carro 4.");
+
+                    CarsControler = escanor.nextInt();
+
+                    switch(CarsControler){
+
+                        case 1:
+                        {
+                            String modelo_novo = null;
+
+                            System.out.println("Digite as novas informações do veiculo"  );
+                            System.out.println("modelo:"  );
+                            String modelo = escanor.next();
+
+                            System.out.println("Ano:" );
+                            int ano =escanor.nextInt();
+
+                            System.out.println("Cor do veiculo" );
+                            String cor = escanor.next();
+
+                            System.out.println("Kilometragem do veiculo");
+                            int KM = escanor.nextInt();
+
+                            System.out.println("Preço do veiculo");
+                            double preco = escanor.nextDouble();
+                            Carros EditorCarros = new Carros(modelo, ano, cor, KM, preco);
+                            carro1 = EditorCarros;
+                            menu.Menu();
+
+                            
+                            System.out.println("");
+
+                            
+
+                        }
+                    }
+                }
             }
             
         }
     }    
     
 }
-
-    
