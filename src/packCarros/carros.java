@@ -26,6 +26,7 @@ public class Carros {
         this.KM = KM;
         this.preco = preco;
     }
+
     public void setAtributo(String modelo, int ano, String cor, int KM, double preco) {
         this.modelo = modelo;
         this.ano = ano;
@@ -61,7 +62,6 @@ public class Carros {
         System.out.println("1. Cadastro veículo novo.");
         System.out.println("2. Ver veiculos.");
         System.out.println("3. Editar veiculo.");
-        System.out.println("4. Exluir cadastro de veiculos.");
         System.out.println("0. Voltar para o menu principal.");
 
         // variavel usada para controlar o submenu
@@ -113,30 +113,24 @@ public class Carros {
 
                 System.out.println("LISTA DE VEICULOS ");
 
-                
                 System.out.println(ListaCarros.get(0));
                 System.out.println("");
                 System.out.println(ListaCarros.get(1));
                 System.out.println("");
                 System.out.println(ListaCarros.get(2));
                 System.out.println("");
-                
 
-                if(ListaCarros.size() == 4){
+                if (ListaCarros.size() == 4) {
 
-                System.out.println(ListaCarros.get(0));
-                System.out.println("");
-                System.out.println(ListaCarros.get(1));
-                System.out.println("");
-                System.out.println(ListaCarros.get(2));
-                System.out.println("");
-                System.out.println(ListaCarros.get(3));
+                    System.out.println(ListaCarros.get(0));
+                    System.out.println("");
+                    System.out.println(ListaCarros.get(1));
+                    System.out.println("");
+                    System.out.println(ListaCarros.get(2));
+                    System.out.println("");
+                    System.out.println(ListaCarros.get(3));
 
                 }
-
-
-                        
-            
 
                 System.out.println("Digite 0 para voltar ao Menu principal");
                 CarsControler = escanor.nextInt();
@@ -148,7 +142,7 @@ public class Carros {
                     break;
 
                 }
-                
+
                 break;
             }
             case 3: {
@@ -189,9 +183,9 @@ public class Carros {
 
                                 System.out.println("modelo:");
                                 modelo_novo = escanor.next();
-                                
+
                                 carro1.modelo = modelo_novo;
-                                
+
                                 ListaCarros.get(0).setAtributo(modelo_novo, novo_ano, nova_cor, novo_KM, novo_preco);
 
                             }
@@ -211,7 +205,7 @@ public class Carros {
                                 nova_cor = escanor.next();
 
                                 carro1.cor = nova_cor;
-                                
+
                                 ListaCarros.get(0).setAtributo(modelo_novo, novo_ano, nova_cor, novo_KM, novo_preco);
 
                             }
@@ -274,7 +268,7 @@ public class Carros {
 
                                 carro2.ano = novo_ano;
 
-                               ListaCarros.get(1).setAtributo(modelo_novo, novo_ano, nova_cor, novo_KM, novo_preco);
+                                ListaCarros.get(1).setAtributo(modelo_novo, novo_ano, nova_cor, novo_KM, novo_preco);
                             }
 
                             if (CarsControler == 3) {
@@ -308,8 +302,6 @@ public class Carros {
                             }
                             System.out.println("Carro editado !!!");
                             menu.Menu();
-
-                            
 
                         }
                         case 3: {
@@ -345,7 +337,7 @@ public class Carros {
 
                                 carro3.ano = novo_ano;
 
-                               ListaCarros.get(2).setAtributo(modelo_novo, novo_ano, nova_cor, novo_KM, novo_preco);
+                                ListaCarros.get(2).setAtributo(modelo_novo, novo_ano, nova_cor, novo_KM, novo_preco);
                             }
 
                             if (CarsControler == 3) {
@@ -380,7 +372,6 @@ public class Carros {
 
                             System.out.println("Carro editado !!!");
                             menu.Menu();
-                           
 
                         }
 
@@ -391,21 +382,29 @@ public class Carros {
                     }
 
                 }
-                if (CarsControler == 2 && CarsControler != 1) {
+                if (CarsControler == 2) {
                     System.out.println("\nExcluir Veiculos");
                     System.out.println("");
                     System.out.println("\nEscolha o veiculo a ser deletado");
                     System.out.println("Carro 1");
                     System.out.println("Carro 2");
-                    System.out.println("Carro3");
+                    System.out.println("Carro 3");
 
                     int Controler = escanor.nextInt();
                     switch (Controler) {
                         case 1: {
                             ListaCarros.remove(0);
-                            
+
                             break;
-                            
+
+                        }
+                        case 2: {
+                            ListaCarros.remove(1);
+                            break;
+                        }
+                        case 3:
+                        {
+                            ListaCarros.remove(2);
                         }
                     }
                     menu.Menu();
@@ -419,6 +418,6 @@ public class Carros {
             }
 
         }
-}
+    }
 
 }
